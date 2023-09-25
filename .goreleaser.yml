@@ -11,28 +11,28 @@ builds:
       - arm64
     ldflags:
       - -s -w
-archives:
-  - replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: i386
-      amd64: x86_64
-    files:
-      - LICENSE
-      - README.md
-    format_overrides:
-      - goos: windows
-        format: zip
-dockers:
-  - goos: linux
-    goarch: amd64
-    ids: ["rotoxy"]
-    image_templates:
-      - "gtuk/rotoxy:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
-      - "gtuk/rotoxy:latest"
-    use_buildx: true
-    dockerfile: Dockerfile
+# archives:
+#   - replacements:
+#       darwin: Darwin
+#       linux: Linux
+#       windows: Windows
+#       386: i386
+#       amd64: x86_64
+#     files:
+#       - LICENSE
+#       - README.md
+#     format_overrides:
+#       - goos: windows
+#         format: zip
+# dockers:
+#   - goos: linux
+#     goarch: amd64
+#     ids: ['rotoxy']
+#     image_templates:
+#       - 'gtuk/rotoxy:{{ .Major }}.{{ .Minor }}.{{ .Patch }}'
+#       - 'gtuk/rotoxy:latest'
+#     use_buildx: true
+#     dockerfile: Dockerfile
 checksum:
   name_template: 'checksums.txt'
 snapshot:
